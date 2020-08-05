@@ -6,7 +6,7 @@ import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 
 
-token="30b1235ef7a47f25146523bb6fd174e8f63438e7169860e5caf7e0505083a320da07b84e6629392c355d3"
+token="=====YOUR TOKEN========"
 
 vk=vk_api.VkApi(token=token)
 
