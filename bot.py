@@ -17,15 +17,12 @@ text=["Кек","Лол","Ну ты и лох","bot by Xachapury","Бтс топ"
 running=True
 
 def write_msg(message, user_id, random_id):
-  vk.method('messages.send', {'message': message,'user_id': user_id,'random_id': random_id})
+  vk.method('messages.send', {'message': message,'user_id': user_id,'random_id': random_id,})
   
 for event in longpoll.listen():
     if event.type==VkEventType.MESSAGE_NEW:
-      if event.to_me:
-        request=event.text
+      request=event.text
+      if event.from_user:
         if request=='TEST':
           print('получено')
-          write_msg('слышу', event.user_id, random.getrandbits(64))
-        else:
-          write_msg('?', event.user_id, random.getrandbits(64))
-          
+          write_msg(random.choice(text), event.user_id, random.getrandbits(64))
