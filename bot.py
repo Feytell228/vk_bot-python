@@ -8,11 +8,12 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 
 token="00b1235ef7a47f25146523bb6fd174e8f63438e7169860e5caf7e0505083a320da07b84e6629392c355d4"
 
+
 vk=vk_api.VkApi(token=token)
 
 longpoll=VkLongPoll(vk)
 
-text=["Кек","Лол","Ну ты и лох","bot by Xachapury","Бтс топ","порно асманской империи "," Чукча","водка плоха","Привет","Здорова", "хеллоу", "хелло","хай","зиг хаиль","как дела","че каво","пошол нахуй","как тебя зовут", "ты че пидр",]
+text=["Кек","Лол","Ну ты и лох","bot by Xachapury","Бтс топ"," Чукча","водка плоха","Привет","Здорова", "хеллоу", "хелло","хай","зиг хаиль","как дела","че каво","как тебя зовут"]
 
 running=True
 
@@ -25,7 +26,6 @@ for event in longpoll.listen():
       if event.from_user:
         if request=='!даун':
           print('получено !даун')
-          
           write_msg(random.choice(text), event.user_id, random.getrandbits(64))  #это полностью копируй
         elif request=='!хелп':
           print('получено !хелп')
